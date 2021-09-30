@@ -1,11 +1,18 @@
 package com.bridgelabz.addressbookapp.dto;
 
+import javax.validation.constraints.NotEmpty;
+
 public class AddressBookDTO 
 {
+	@NotEmpty(message="First name can not be null")
 	public String firstName;
+	@NotEmpty(message="Last name can not be null")
 	public String lastName;
+	@NotEmpty(message="Address can not be null")
 	public String address;
+	@NotEmpty(message="City can not be null")
 	public String city;
+	@NotEmpty(message="State can not be null")
 	public String state;
 	
 	public AddressBookDTO(String firstName, String lastName, String address, String city, String state) {
