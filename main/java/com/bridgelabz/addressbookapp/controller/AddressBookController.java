@@ -70,4 +70,13 @@ public class AddressBookController
     	 return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     	 
      }
+     
+     @PutMapping("/update/{empId}")
+     public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("bookId") int bookId,@RequestBody AddressBookDTO addressBookDTO)
+     {
+    	 AddressBookData dataList=null;
+    	 dataList=service.updateAddressBookData(bookId,addressBookDTO);
+    	 ResponseDTO respDTO=new ResponseDTO("Updated Address Book data successfully",dataList);
+    	 return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
+     }
 }
