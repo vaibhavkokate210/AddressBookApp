@@ -18,7 +18,7 @@ public class AddressBookService implements IAddressBookService{
 	@Override
 	public AddressBookData getAddressBookDataById(int id)
 	{
-		return list.get(id-1);
+		return list.stream().filter(empData->empData.getBookId()==id).findFirst().orElseThrow(()->new AddressBookException("Address Book not found"));
 	}
 
 	@Override
